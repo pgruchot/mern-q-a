@@ -1,0 +1,28 @@
+.questions-container{
+    margin-top: 100px;
+    min-width: 100%;
+    min-height: 400px;
+    display: flex;
+    overflow-x: scroll;
+    flex-wrap: nowrap; 
+}
+
+.questions-container::-webkit-scrollbar {
+    display: none;
+    -webkit-overflow-scrolling: auto;
+  }
+
+.question-card-container{
+    margin:auto 15px;
+    min-width: 400px;
+    height: 100%;
+    display: inline-block;
+}
+
+
+.card-background{
+    height: 300px;
+    width: 100%;
+    background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+    color: white;
+}

@@ -35,10 +35,11 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    const {title, description} = req.body;
+    const {title, description, author} = req.body;
     const newQuestion = new Question({
         title,
         description,
+        author,
         answers: []
     });
     console.log('gettng here')
@@ -67,7 +68,9 @@ router.post('/answer/:id', (req, res) => {
             });
         };
         console.log(question);
-        res.status(200).send();
+        res.json({
+            'errors': ''
+        })
     })
 })
 

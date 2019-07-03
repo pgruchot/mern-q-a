@@ -13,7 +13,7 @@ server.use(cors());
 server.use(helmet());
 server.use(morgan('combined'));
 
-server.use('/api', require('./api'));
+server.use('/questions', require('./questions'));
 
 mongoose.connect(keys.mongoDB.dbURI, { useNewUrlParser: true })
     .then(
