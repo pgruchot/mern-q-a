@@ -19,11 +19,15 @@ export default class Questions extends Component {
         })
     }
     render() {
+        const {questions} = this.state;
+        if (questions === null) {
+        return <p>Loading ...</p>;
+        }
         return (
             <div className="questions-container">
-            {this.state.questions ? (
-                this.state.questions.map(question => {
-                     return <Question 
+            {
+                questions.map(question => {
+                    return <Question 
                                 key={question._id} 
                                 _id={question._id}
                                 title={question.title}
@@ -31,9 +35,7 @@ export default class Questions extends Component {
                                 answers={question.answers.length}
                             /> 
                 })
-            ) : (
-                <h2> Loading questions</h2>
-            ) }
+            }
             </div>
         )
     }

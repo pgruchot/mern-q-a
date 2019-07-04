@@ -14,7 +14,7 @@
 
 .question-card-container{
     margin:auto 15px;
-    min-width: 400px;
+    width: 400px;
     height: 100%;
     display: inline-block;
 }

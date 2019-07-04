@@ -1,14 +1,27 @@
 import React from 'react'
+import withAuthContext from './withAuthContext';
+import { Link } from 'react-router-dom';
 
-export default function Header() {
+export default withAuthContext(function Header(props) {
     return (
         <nav>
             <div className="nav-wrapper teal">
             <a href="#" className="brand-logo">MERN Q & A App</a>
-            <ul id="nav-mobile" className="right hide-on-med-and-down">
-              
+            <ul id="nav-mobile" className="right">
+                {props.context.isAuth ? (
+                    <div>
+                        <li><Link to="/">Home</Link></li>
+                        <li><button onClick={(e) => props.context.logout(e)}>Logout</button></li>
+                    </div>
+                ) : (
+                    <div>
+                        <li className=""><Link to="/">Home</Link></li>
+                        <li className=""><Link to="/login">Login</Link></li>
+                        <li className=""><Link to="/signup">Signup</Link></li>
+                    </div>
+                )}
             </ul>
             </div>
         </nav>
     )
-}
+})

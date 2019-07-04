@@ -4,7 +4,6 @@ import axios from 'axios';
 export default class QuestionPage extends Component {
     constructor(props){
         super(props);
-
         this.state = {
             question: null,
         }
