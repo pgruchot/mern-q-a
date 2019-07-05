@@ -13,8 +13,7 @@ export default class QuestionPage extends Component {
         console.log('here')
         const { match: { params } } = this.props;
         console.log(this.props)
-        const question = (await axios.get(`/questions/${params.questionId}`)).data.question;
-        console.log(question)      
+        const question = (await axios.get(`/questions/${params.questionId}`)).data.question;    
         this.setState({
             question
         });
@@ -40,6 +39,7 @@ export default class QuestionPage extends Component {
                              <div className="card-action">
                                  Answers: 
                                  {question.answers.map((answer, idx) => {
+                                     
                                      return <p key={idx}> {answer} </p>
                                  })}
                             </div>

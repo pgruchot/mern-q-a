@@ -5,6 +5,7 @@
     display: flex;
     overflow-x: scroll;
     flex-wrap: nowrap; 
+    justify-content: center;
 }
 
 .questions-container::-webkit-scrollbar {
@@ -23,6 +24,29 @@
 .card-background{
     height: 300px;
     width: 100%;
-    background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
     color: white;
 }
+.grad1{
+    background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+}
+
+.grad2{
+    background: linear-gradient(45deg, #0F2027 30%, #2C5364 90%);
+}
+
+.grad3{
+    background: linear-gradient(45deg, #a8ff78 30%, #78ffd6 90%);
+}
+
+.grad4{
+    background: linear-gradient(45deg, #636363 30%, #a2ab58 90%);
+}
+
+.input-field input:focus + label {
+    color: #424242 !important;
+  }
+  /* label underline focus color */
+.row .input-field input:focus {
+    border-bottom: 1px solid #424242 !important;
+    box-shadow: 0 1px 0 0 #424242 !important
+  }

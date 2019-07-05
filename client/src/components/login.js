@@ -62,7 +62,7 @@ export default withAuthContext(class Login extends Component {
                                         </div>
                                     </div>
                                     <div className="row">
-                                        <button className="btn waves-effect waves-light purple darken-4" onClick={(e) => {this.props.context.login(e, this.state.username, this.state.password, this.updateErrors)}}>Submit
+                                        <button className="btn waves-effect waves-light grey darken-3" onClick={(e) => {this.props.context.login(e, this.state.username, this.state.password, this.updateErrors)}}>Submit
                                             <i className="material-icons right">send</i>
                                         </button>
                                     </div>

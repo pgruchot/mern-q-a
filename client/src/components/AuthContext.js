@@ -15,8 +15,8 @@ class AuthProvider extends Component {
         this.logout = this.logout.bind(this)
     }
 
-    componentDidMount() {
-        axios.get('/auth/user')
+    async componentDidMount() {
+        await axios.get('/auth/user')
         .then(response =>{
             if(response.data.user) {
                 console.log('got user!')
