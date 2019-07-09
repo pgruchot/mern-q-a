@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-export default function QuestionCard( {_id, title, description, answers, color}) {
+export default function QuestionCard( {_id, title, description, author, answers, color}) {
     return (
         <div className="question-card-container">
-                    <div className="card medium">
+                    <div className="card medium blue-grey lighten-5">
                         <div className="card-image">
                             <div className={"card-background " + color}></div>
-                            <span className="card-title">{title}</span>
+                            <span className="card-title">{author}<br></br>{title}</span>
                         </div>
                         <div className="card-content">
                             <p>{ description }</p>

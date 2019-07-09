@@ -21,15 +21,24 @@ export default withAuthContext(class AddQuestion extends Component {
         })
     }
 
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault()
         axios.post('/questions', {
             author: this.props.context.user.local.username,
             title: this.state.title,
             description: this.state.description,
         } ).then(response => {
+            if(!response.data.errors) {
+                this.setState({
+                    title: '',
+                    description: '',
+                    errors: response.data.errors
+                })
+            } else {
                 this.setState({
                     errors: response.data.errors
                 })
+            }
         })
     }
     render() {
@@ -39,7 +48,7 @@ export default withAuthContext(class AddQuestion extends Component {
                     <div>   
                         {errors}
                     </div>
-                    <div className="container white" style={{marginTop: 50 + 'px', borderRadius: 10 + 'px'}}>
+                    <div className="container blue-grey lighten-5" style={{marginTop: 50 + 'px', borderRadius: 10 + 'px'}}>
                         <div className="row center" style={{margin: 10 + 'px'}}>
                             <form className="col s12">
                                 <div className="row">

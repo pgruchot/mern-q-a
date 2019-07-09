@@ -8,7 +8,6 @@ import { AuthProvider } from './components/AuthContext'
 import Login from './components/login'
 import Signup from './components/Signup'
 import AddQuestion from './components/AddQuestion'
-import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
   return (

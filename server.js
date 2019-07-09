@@ -15,14 +15,18 @@ server.use(cors());
 server.use(helmet());
 server.use(morgan('combined'));
 
-server.use(passport.initialize());
-server.use(passport.session());
+
+
 
 server.use(session({
     secret: keys.sessionSecret.secret,
     resave: false,
     saveUninitialized: false,
+    cookie: { maxAge: 1*60*60*1000 },
 }));
+
+server.use(passport.initialize());
+server.use(passport.session());
 
 server.use('/auth', require('./auth'));
 server.use('/questions', require('./questions'));

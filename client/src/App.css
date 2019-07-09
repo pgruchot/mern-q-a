@@ -1,11 +1,23 @@
+
 .questions-container{
-    margin-top: 100px;
+    margin-top: 60px;
     min-width: 100%;
     min-height: 400px;
     display: flex;
     overflow-x: scroll;
     flex-wrap: nowrap; 
+    justify-content: space-between;
+}
+
+.question-card-container-single-page {
+    margin-top: 60px;
+    min-width: 100%;
     justify-content: center;
+    display: flex;
+}
+
+.single-page-card-size {
+    min-width: 500px;
 }
 
 .questions-container::-webkit-scrollbar {
@@ -15,7 +27,7 @@
 
 .question-card-container{
     margin:auto 15px;
-    width: 400px;
+    min-width: 400px;
     height: 100%;
     display: inline-block;
 }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import withAuthContext from './withAuthContext'
-import axios from 'axios'
 
 export default withAuthContext(class Login extends Component {
     constructor() {
@@ -46,7 +45,8 @@ export default withAuthContext(class Login extends Component {
                         <div>
                             {errors}
                         </div>
-                        <div className="container white" style={{marginTop: 50 + 'px', borderRadius: 10 + 'px'}}>
+                        <div className="container blue-grey lighten-5
+" style={{marginTop: 50 + 'px', borderRadius: 10 + 'px'}}>
                             <div className="row center"  style={{margin: 10 + 'px'}}>
                                 <form className="col s12">
                                     <div className="row center">

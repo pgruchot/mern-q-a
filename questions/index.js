@@ -59,8 +59,9 @@ router.post('/', (req, res) => {
 });
 
 router.post('/answer/:id', (req, res) => {
-    const {answer} = req.body;
-    Question.findOneAndUpdate({ '_id': req.params.id },  {$push: {'answers': answer}}, (err, question) => {
+    const {answer, author} = req.body;
+    //const author = req.user.local.username;
+    Question.findOneAndUpdate({ '_id': req.params.id },  {$push: {'answers': {answer, author}}}, (err, question) => {
         if(err) {
             console.log('Error while looking for question in db')
             res.json({

@@ -6,12 +6,12 @@ export default withAuthContext(function Header(props) {
     return (
         <nav>
             <div className="nav-wrapper grey darken-3">
-            <a href="#" className="brand-logo">MERN Q & A App</a>
+            <a href="/" className="brand-logo">MERN Q & A App</a>
             <ul id="nav-mobile" className="right">
                 {props.context.isAuth ? (
                     <div>
                         <li><Link to="/">Home</Link></li>
-                        <li><a onClick={(e) => props.context.logout(e)}>Logout</a></li>
+                        <li><a href="#" onClick={(e) => props.context.logout(e)}>Logout</a></li>
                     </div>
                 ) : (
                     <div>
