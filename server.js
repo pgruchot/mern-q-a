@@ -15,22 +15,21 @@ server.use(cors());
 server.use(helmet());
 server.use(morgan('combined'));
 
-
-
-
+//session setup
 server.use(session({
     secret: keys.sessionSecret.secret,
     resave: false,
     saveUninitialized: false,
     cookie: { maxAge: 1*60*60*1000 },
 }));
-
 server.use(passport.initialize());
 server.use(passport.session());
 
+//route files
 server.use('/auth', require('./auth'));
 server.use('/questions', require('./questions'));
 
+//db connection
 mongoose.connect(keys.mongoDB.dbURI, { useNewUrlParser: true })
     .then(
         () => {
@@ -41,8 +40,8 @@ mongoose.connect(keys.mongoDB.dbURI, { useNewUrlParser: true })
         console.log(err);
     });
 
+//server listen
 const PORT = 5000;
-
 server.listen(PORT, () => {
     console.log(`Listening on ${PORT}`);
 });

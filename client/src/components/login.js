@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import withAuthContext from './withAuthContext'
 
+//login component, presents form and fires login function from context component
 export default withAuthContext(class Login extends Component {
     constructor() {
         super()

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
+//component for signup process, also handles axios requests
 export default class Signup extends Component {
     constructor() {
         super();
@@ -17,16 +18,13 @@ export default class Signup extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     };
-
     handleChange(e) {
         this.setState({
             [e.target.name]: e.target.value,
         });
     };
-
     handleSubmit(e) {
         e.preventDefault();
-        console.log('handleSubmit called...');
         axios.post('/auth/signup', {
             username: this.state.username,
             email: this.state.email,
@@ -34,21 +32,16 @@ export default class Signup extends Component {
             password2: this.state.password2,
         }).then(response => {
             if(!response.data.errors) {
-                console.log('Youre good people');
                 this.setState({
                     redirectTo: '/login'
                 })
             } else {
-                console.log('getting here')
-                console.log(response.data)
-
                 this.setState({
                     errors: response.data.errors
                 })
             }
         })
     }
-    
     render() {
         if (this.state.redirectTo) {
 			return <Redirect to={{ pathname: this.state.redirectTo }} />

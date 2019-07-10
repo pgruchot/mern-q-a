@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Question = require('../models/questions');
 
+//get all the questions for main page
 router.get('/', (req, res) => {
     Question.find({}, (err, questions) => {
         if(err) {
@@ -18,6 +19,7 @@ router.get('/', (req, res) => {
     });
 });
 
+//getting specific question for the single question page
 router.get('/:id', (req, res) => {
     Question.findOne({ '_id': req.params.id }, (err, question) => {
         if(err) {
@@ -34,6 +36,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+//post question
 router.post('/', (req, res) => {
     const {title, description, author} = req.body;
     const newQuestion = new Question({
@@ -42,7 +45,6 @@ router.post('/', (req, res) => {
         author,
         answers: []
     });
-    console.log('gettng here')
     newQuestion.save((err) => {
         if(err) {
             console.log('Error while saving new question');
@@ -58,6 +60,7 @@ router.post('/', (req, res) => {
     });
 });
 
+//post answer to specific question
 router.post('/answer/:id', (req, res) => {
     const {answer, author} = req.body;
     //const author = req.user.local.username;

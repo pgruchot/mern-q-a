@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+
+//context component
 const AuthContext = React.createContext();
 
 class AuthProvider extends Component {
@@ -15,11 +17,9 @@ class AuthProvider extends Component {
         this.logout = this.logout.bind(this)
     }
 
-    async componentDidMount() {
-        await axios.get('/auth/user')
-        .then(response =>{
+    componentDidMount() {
+        axios.get('/auth/user').then(response =>{
             if(response.data.user) {
-                console.log('got user!')
                 this.setState({
                     isAuth: true,
                     user: response.data.user
@@ -40,7 +40,6 @@ class AuthProvider extends Component {
             password
         }).then(response => {
             if (response.data.user) {
-                console.log(`Logging in as ${response.data.user.local.username}`)
                 this.setState({
                     isAuth: true,
                     user: response.data.user

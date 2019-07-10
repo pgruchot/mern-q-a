@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+//component used to present a single card in container
 export default function QuestionCard( {_id, title, description, author, answers, color}) {
     return (
         <div className="question-card-container">

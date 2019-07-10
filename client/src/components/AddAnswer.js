@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import withAuthContext from './withAuthContext'
 import axios from 'axios';
 
+//component used to present add question form and handle axios post request
 export default withAuthContext(class AddAnswer extends Component {
     constructor(props) {
         super(props)

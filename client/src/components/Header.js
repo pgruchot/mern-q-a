@@ -2,6 +2,7 @@ import React from 'react'
 import withAuthContext from './withAuthContext';
 import { Link } from 'react-router-dom';
 
+//navbar component
 export default withAuthContext(function Header(props) {
     return (
         <nav>

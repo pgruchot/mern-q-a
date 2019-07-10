@@ -1,6 +1,6 @@
 import React from 'react';
 import { AuthContext } from './AuthContext';
-
+//HOC for context consumer
 const withAuthContext = (Component) => {
     return (props) => {
         return (

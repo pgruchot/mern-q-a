@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import withAuthContext from './withAuthContext'
 import axios from 'axios'
 
+//component used to present add question form and handle axios post requests
 export default withAuthContext(class AddQuestion extends Component {
     constructor(props) {
         super(props)
@@ -14,13 +15,11 @@ export default withAuthContext(class AddQuestion extends Component {
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
-
     handleChange(e) {
         this.setState({
             [e.target.name]: e.target.value
         })
     }
-
     handleSubmit(e) {
         e.preventDefault()
         axios.post('/questions', {
@@ -75,9 +74,7 @@ export default withAuthContext(class AddQuestion extends Component {
         ) : (null)
 
         return (
-            <div>
-                {form}
-            </div>
+            form
         )
 
     }

@@ -1,3 +1,5 @@
+
+//roll one of four possible gradient colors
 export default function RollColor() {
     let color = ''
         let rand = Math.floor(1 + Math.random() * (4))
